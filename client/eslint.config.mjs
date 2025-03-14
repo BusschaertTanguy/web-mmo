@@ -2,7 +2,7 @@
 
 import eslint from "@eslint/js";
 import tseslint from "typescript-eslint";
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default tseslint.config(
     {
@@ -11,7 +11,7 @@ export default tseslint.config(
     eslint.configs.recommended,
     tseslint.configs.strictTypeChecked,
     tseslint.configs.stylisticTypeChecked,
-    eslintPluginPrettierRecommended,
+    eslintConfigPrettier,
     {
         languageOptions: {
             parserOptions: {
@@ -24,15 +24,6 @@ export default tseslint.config(
                 "error",
                 {
                     allowInterfaces: "always",
-                },
-            ],
-            "prettier/prettier": [
-                "error",
-                {
-                    trailingComma: "es5",
-                    tabWidth: 4,
-                    semi: true,
-                    singleQuote: false,
                 },
             ],
         },
