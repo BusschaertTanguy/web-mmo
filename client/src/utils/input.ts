@@ -8,11 +8,11 @@ window.addEventListener("keyup", (event) => {
     pressedKeys.delete(event.key);
 });
 
-export const keyPressed = (key: string): boolean => {
+const keyPressed = (key: string): boolean => {
     return pressedKeys.has(key);
 };
 
-export const horizontal = (): number => {
+const horizontal = (): number => {
     let x = 0;
 
     if (keyPressed("a")) {
@@ -26,7 +26,7 @@ export const horizontal = (): number => {
     return x;
 };
 
-export const vertical = (): number => {
+const vertical = (): number => {
     let y = 0;
 
     if (keyPressed("w")) {
@@ -39,3 +39,11 @@ export const vertical = (): number => {
 
     return y;
 };
+
+const Input = {
+    keyPressed,
+    horizontal,
+    vertical,
+};
+
+export default Input;

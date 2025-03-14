@@ -3,7 +3,7 @@ import { TransformComponent } from "../components/transform-component.ts";
 import { SpriteComponent } from "../components/sprite-component.ts";
 import { Vector } from "../models/vector.ts";
 import { BodyComponent } from "../components/body-component.ts";
-import { horizontal, vertical } from "../utils/input.ts";
+import Input from "../utils/input.ts";
 
 export class Player extends Entity {
     constructor() {
@@ -19,7 +19,7 @@ export class Player extends Entity {
         const body = this.getComponent(BodyComponent);
 
         if (transform && body) {
-            const direction = new Vector(horizontal(), vertical());
+            const direction = new Vector(Input.horizontal(), Input.vertical());
             const velocity = body.getVelocity(direction).multiply(delta);
             transform.translate(velocity);
         }
