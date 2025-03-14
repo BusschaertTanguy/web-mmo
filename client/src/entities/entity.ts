@@ -13,7 +13,7 @@ export abstract class Entity {
 
     public getComponent<T extends Component>(
         type: new (...args: never[]) => T
-    ): T | undefined {
+    ) {
         return this.components.find(
             (component): component is T => component instanceof type
         );

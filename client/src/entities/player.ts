@@ -14,7 +14,7 @@ export class Player extends Entity {
         ]);
     }
 
-    public update(delta: number): void {
+    public update(delta: number) {
         const transform = this.getComponent(TransformComponent);
         const body = this.getComponent(BodyComponent);
 

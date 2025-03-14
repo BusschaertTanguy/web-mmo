@@ -4,7 +4,7 @@ import { Vector } from "../models/vector.ts";
 export class BodyComponent implements Component {
     constructor(private readonly speed: number) {}
 
-    public getVelocity(direction: Vector): Vector {
+    public getVelocity(direction: Vector) {
         if (direction.equals(Vector.zero)) {
             return Vector.zero;
         }
